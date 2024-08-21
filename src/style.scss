@@ -1,0 +1,99 @@
+@import './scss/variables';
+@import './scss/mixins';
+
+body{
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-family: sans-serif;
+    @include show(flex,row,100vh,start);
+    .left-div{
+        padding-left: 5rem;
+        width: 40%;
+        background-color: $leftDivColor;
+        height: 100vh;
+        @include show;
+        gap: 15px;
+        & .title-container{
+            & .title-inp{
+                @include input(30px);
+            }
+        }
+        & .description-container{
+            & .description-inp{
+                @include input(70px);
+            }
+        }
+        & .inner-container{
+            @include show(flex,row,auto,start);
+            gap: 20px;
+            & .due-date{
+                & .date-inp{
+                    @include input(30px,140px);
+                }
+            }
+            & .priority-container{
+                & .priority-inp{
+                    @include input(30px,140px);
+                }
+            }
+        }
+        & .category-container{
+            & .category-inp-container{
+                @include show(flex,row,auto,start);
+                background-color: $textColor;
+                width: 300px;
+                & .category-inp{
+                    padding: 5px;
+                    & .category-value{
+                        background-color: $categoryBtn;
+                        text-align: center;
+                        border-radius: 5px;
+                        margin-right: 5px;
+                        height: 10px;
+                        & .cross-btn{
+                            border: none;
+                            height: 10px;
+                            background-color: $categoryBtn;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                & .category-val{
+                    @include input(30px,140px);
+                    border: none;
+                }
+            }
+        }
+        & .add-btn{
+            height: 50px;
+            width: 300px;
+            color: $textColor;
+            text-align: center;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: $borderColor;
+        }
+        
+    }
+    .right-div{
+        @include show(flex,column,100vh,start);
+        padding-left: 20px;
+        width: 60%;
+        & .card-container{
+            padding: 20px;
+            gap: 20px;
+            & .task-card{
+                border: 1px solid $borderColor;
+                border-radius: 5px;
+                display: $display;
+                & .leftDiv{
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  height: 100vh;
+}
+body .left-div {
+  padding-left: 5rem;
+  width: 40%;
+  background-color: #E8F8F6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  gap: 15px;
+}
+body .left-div .title-container .title-inp {
+  width: 300px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body .left-div .description-container .description-inp {
+  width: 300px;
+  min-height: 70px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body .left-div .inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  height: auto;
+  gap: 20px;
+}
+body .left-div .inner-container .due-date .date-inp {
+  width: 140px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body .left-div .inner-container .priority-container .priority-inp {
+  width: 140px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body .left-div .category-container .category-inp-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  height: auto;
+  background-color: white;
+  width: 300px;
+}
+body .left-div .category-container .category-inp-container .category-inp {
+  padding: 5px;
+}
+body .left-div .category-container .category-inp-container .category-inp .category-value {
+  background-color: aqua;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 5px;
+  height: 10px;
+}
+body .left-div .category-container .category-inp-container .category-inp .category-value .cross-btn {
+  border: none;
+  height: 10px;
+  background-color: aqua;
+  cursor: pointer;
+}
+body .left-div .category-container .category-inp-container .category-val {
+  width: 140px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  border: none;
+}
+body .left-div .add-btn {
+  height: 50px;
+  width: 300px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+}
+body .right-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100vh;
+  padding-left: 20px;
+  width: 60%;
+}
+body .right-div .card-container {
+  padding: 20px;
+  gap: 20px;
+}
+body .right-div .card-container .task-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+}
+body .right-div .card-container .task-card .leftDiv {
+  padding-top: 20px;
+}/*# sourceMappingURL=style.css.map */

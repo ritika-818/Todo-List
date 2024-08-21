@@ -1,0 +1,16 @@
+@import './variables';
+
+@mixin show($display:flex , $direction:column, $height:100vh ,$justify:center){
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    // align-items: center;
+    height: $height;
+}
+
+@mixin input($minHeight, $width:300px){
+    width: $width;
+    min-height: $minHeight;
+    border: 1px solid $borderColor;
+    border-radius: 5px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://kit.fontawesome.com/737d33ad0a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <form class="left-div">
+      <div class="title-container">
+        <div>Task Title</div>
+        <input
+          class="title-inp"
+          placeholder="Enter your task here..."
+          type="text"
+          value=""
+          required
+        />
+      </div>
+      <div class="description-container">
+        <div>Task Description</div>
+        <textarea
+          class="description-inp"
+          placeholder="Description..."
+          required
+        ></textarea>
+      </div>
+      <div class="inner-container">
+        <div class="due-date">
+          <div>Due-Date</div>
+          <input type="date" class="date-inp" required/>
+        </div>
+        <div class="priority-container">
+          <div>Priority</div>
+          <select name="priority" id="priority" class="priority-inp">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </div>
+      <div class="category-container">
+        <div>Categories</div>
+        <div class="category-inp-container">
+          <div class="category-inp"></div>
+          <select name="category" id="category" class="category-val">
+            <option value="">Select Category...</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="home">Home</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="add-btn">ADD</button>
+    </form>
+    <div class="right-div">
+        <h2>Task manager</h2>
+        <div class="card-container">
+
+        </div>
+    </div>
+    <script src="build/index.js"></script>
+  </body>
+</html>
