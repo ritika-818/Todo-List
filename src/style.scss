@@ -80,11 +80,65 @@ body{
     }
     .right-div{
         @include show(flex,column,100vh,start);
+        gap: 20px;
         padding-left: 20px;
         width: 60%;
+        & .search-container{
+            & .search{
+                @include input(40px, 650px);
+            }
+        }
+        & .filter-container{
+            display: $display;
+            gap: 20px;
+            & .category-container{
+                & .category-inp-container{
+                    @include show(flex,row,auto,start);
+                    background-color: $textColor;
+                    width: 300px;
+                    & .category-inp{
+                        padding: 5px;
+                        & .category-value{
+                            background-color: $categoryBtn;
+                            text-align: center;
+                            border-radius: 5px;
+                            margin-right: 5px;
+                            height: 10px;
+                            & .cross-btn{
+                                border: none;
+                                height: 10px;
+                                background-color: $categoryBtn;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    & .category-val{
+                        @include input(30px,140px);
+                        border: none;
+                    }
+                }
+            }
+            & .priority-container{
+                & .priority-inp{
+                    @include input(30px,140px);
+                }
+            }
+            & .filter-task{
+                & .filter-inp{
+                    @include input(30px,140px);
+                }
+            }
+        }
         & .card-container{
+            display: $display;
+            flex-direction: column;
+            gap: 20px;
             padding: 20px;
             gap: 20px;
+            overflow-y: scroll;
+            &::-webkit-scrollbar{
+                display: none;
+            }
             & .task-card{
                 border: 1px solid $borderColor;
                 border-radius: 5px;

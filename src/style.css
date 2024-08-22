@@ -97,12 +97,73 @@ body .right-div {
   flex-direction: column;
   justify-content: start;
   height: 100vh;
+  gap: 20px;
   padding-left: 20px;
   width: 60%;
 }
+body .right-div .search-container .search {
+  width: 650px;
+  min-height: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body .right-div .filter-container {
+  display: flex;
+  gap: 20px;
+}
+body .right-div .filter-container .category-container .category-inp-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  height: auto;
+  background-color: white;
+  width: 300px;
+}
+body .right-div .filter-container .category-container .category-inp-container .category-inp {
+  padding: 5px;
+}
+body .right-div .filter-container .category-container .category-inp-container .category-inp .category-value {
+  background-color: aqua;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 5px;
+  height: 10px;
+}
+body .right-div .filter-container .category-container .category-inp-container .category-inp .category-value .cross-btn {
+  border: none;
+  height: 10px;
+  background-color: aqua;
+  cursor: pointer;
+}
+body .right-div .filter-container .category-container .category-inp-container .category-val {
+  width: 140px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  border: none;
+}
+body .right-div .filter-container .priority-container .priority-inp {
+  width: 140px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+body .right-div .filter-container .filter-task .filter-inp {
+  width: 140px;
+  min-height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 body .right-div .card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
   gap: 20px;
+  overflow-y: scroll;
+}
+body .right-div .card-container::-webkit-scrollbar {
+  display: none;
 }
 body .right-div .card-container .task-card {
   border: 1px solid black;

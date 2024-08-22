@@ -20,6 +20,8 @@ const priorityVal = document.getElementsByClassName(
 const dateVal = document.getElementsByClassName(
   "date-inp"
 )[0] as HTMLInputElement;
+const searchVal = document.getElementsByClassName('search')[0] as HTMLInputElement;
+
 
 category.addEventListener("change", () => {
   const crossBtn = document.createElement("button");
@@ -35,15 +37,44 @@ category.addEventListener("change", () => {
   });
 });
 
+type Tasks = {
+  titleName: string;
+  descName: string;
+}
+
+const tasks: Tasks[]=[];
+
 add.addEventListener("click", (e) => {
   e.preventDefault();
   if (title.value === "") return;
   else if (desc.value === "") return;
-  else createCards();
+  else generateArray(tasks);
 });
 
-function createCards(): void {
-  const card = document.createElement("div");
+function generateArray(tasks:Tasks[]):void{
+  const titleName = title.value;
+  const descName = desc.value;
+  tasks.push({titleName:titleName,descName:descName});
+  console.log(tasks);
+  createCards(tasks);
+}
+console.log("ttt",tasks.length)
+
+  searchVal.addEventListener('input',()=>filterSearch(tasks));
+function filterSearch(tasks:Tasks[]):void{
+  const val = searchVal.value.trim();
+  if(val==="") createCards(tasks);
+  const filterTasks = tasks.filter((task)=>{return task.titleName.toLowerCase().includes(val.toLowerCase());
+  });
+  console.log("ritika",filterTasks);
+  createCards(filterTasks);
+}
+
+function createCards(tasks:Tasks[]): void {
+  if(tasks.length === 0) generateArray(tasks);
+  cardContainer.innerHTML = '';
+  tasks.forEach((task)=>{
+    const card = document.createElement("div");
   card.classList.add("task-card");
   const leftDiv = document.createElement("div");
   leftDiv.classList.add("leftDiv");
@@ -55,7 +86,7 @@ function createCards(): void {
   rightDiv.classList.add("rightDiv");
   const cardTitle = document.createElement("h4");
   cardTitle.classList.add("title");
-  cardTitle.textContent = title.value;
+  cardTitle.textContent = task.titleName;
   rightDiv.appendChild(cardTitle);
   rightDiv.appendChild(categoryDiv);
   const priorityDiv = document.createElement("div");
@@ -67,12 +98,14 @@ function createCards(): void {
     " priority";
   priorityDiv.appendChild(priority);
   rightDiv.appendChild(priorityDiv);
+  // rightDiv.appendChild(categoryDiv);
   const cardDesc = document.createElement("p");
   cardDesc.classList.add("desc");
-  cardDesc.textContent = desc.value;
+  cardDesc.textContent = task.descName;
   rightDiv.appendChild(cardDesc);
   card.appendChild(rightDiv);
   cardContainer.appendChild(card);
+  })
   title.value = "";
   desc.value = "";
 }
