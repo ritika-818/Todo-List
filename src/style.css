@@ -57,6 +57,8 @@ body .left-div .category-container .category-inp-container {
   height: auto;
   background-color: white;
   width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 body .left-div .category-container .category-inp-container .category-inp {
   padding: 5px;
@@ -118,18 +120,20 @@ body .right-div .filter-container .category-container .category-inp-container {
   height: auto;
   background-color: white;
   width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
-body .right-div .filter-container .category-container .category-inp-container .category-inp {
+body .right-div .filter-container .category-container .category-inp-container .category-right-inp {
   padding: 5px;
 }
-body .right-div .filter-container .category-container .category-inp-container .category-inp .category-value {
+body .right-div .filter-container .category-container .category-inp-container .category-right-inp .category-value {
   background-color: aqua;
   text-align: center;
   border-radius: 5px;
   margin-right: 5px;
   height: 10px;
 }
-body .right-div .filter-container .category-container .category-inp-container .category-inp .category-value .cross-btn {
+body .right-div .filter-container .category-container .category-inp-container .category-right-inp .category-value .cross-btn {
   border: none;
   height: 10px;
   background-color: aqua;
@@ -172,4 +176,23 @@ body .right-div .card-container .task-card {
 }
 body .right-div .card-container .task-card .leftDiv {
   padding-top: 20px;
+}
+body .right-div .card-container .task-card .rightDiv {
+  margin-right: 140px;
+  width: 72%;
+}
+body .right-div .card-container .task-card .rightDiv .item-div-container .category-item-value {
+  background-color: aqua;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 3px;
+}
+body .right-div .card-container .task-card .rightDiv .priority-div {
+  margin-bottom: 10px;
+}
+body .right-div .card-container .task-card .trash {
+  margin-top: 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
