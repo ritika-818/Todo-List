@@ -112,14 +112,14 @@ body{
                             }
                         }
                     }
-                    & .category-val{
+                    & .category-right{
                         @include input(30px,140px);
                         border: none;
                     }
                 }
             }
             & .priority-container{
-                & .priority-inp{
+                & .priority-right{
                     @include input(30px,140px);
                 }
             }

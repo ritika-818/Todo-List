@@ -135,14 +135,14 @@ body .right-div .filter-container .category-container .category-inp-container .c
   background-color: aqua;
   cursor: pointer;
 }
-body .right-div .filter-container .category-container .category-inp-container .category-val {
+body .right-div .filter-container .category-container .category-inp-container .category-right {
   width: 140px;
   min-height: 30px;
   border: 1px solid black;
   border-radius: 5px;
   border: none;
 }
-body .right-div .filter-container .priority-container .priority-inp {
+body .right-div .filter-container .priority-container .priority-right {
   width: 140px;
   min-height: 30px;
   border: 1px solid black;

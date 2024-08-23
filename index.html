@@ -38,6 +38,7 @@
         <div class="priority-container">
           <div>Priority</div>
           <select name="priority" id="priority" class="priority-inp">
+            <option value="">Select Priority</option>
             <option value="high">High</option>
             <option value="medium">Medium</option>
             <option value="low">Low</option>
@@ -73,7 +74,7 @@
           <div>Categories</div>
           <div class="category-inp-container">
             <div class="category-inp"></div>
-            <select name="category" id="category" class="category-val">
+            <select name="category" id="category" class="category-right">
               <option value="">Select Category...</option>
               <option value="work">Work</option>
               <option value="personal">Personal</option>
@@ -83,10 +84,10 @@
         </div>
         <div class="priority-container">
           <div>Priority</div>
-          <select name="priority" id="priority" class="priority-inp">
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
+          <select name="priority" id="priority" class="priority-right">
+            <option value="" >Sort by priority</option>
+            <option value="dsc">High to Low</option>
+            <option value="asc">Low to High</option>
           </select>
         </div>
         <div class="filter-task">
