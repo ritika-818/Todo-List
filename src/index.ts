@@ -32,7 +32,7 @@ const iscompleted = document.getElementsByClassName(
 const rightCategory = document.getElementsByClassName(
   "category-right"
 )[0] as HTMLInputElement;
-console.log("hello ritika");
+// console.log("hello ritika");
 
 type Tasks = {
   titleName: string;
@@ -74,7 +74,7 @@ function generateArray(tasks: Tasks[]): void {
     category: category,
     date: dateValue
   });
-  console.log(tasks);
+  // console.log(tasks);
   saveTasks(tasks);
   createCards(tasks);
 }
@@ -146,7 +146,6 @@ iscompleted.addEventListener("change", () => filterComplete(tasks));
 
 function filterSearch(tasks: Tasks[]): void {
   const val = searchVal.value.trim();
-  // const taskComplete = iscompleted.value === "complete";
   if (val === "") createCards(tasks);
   const filterTasks = tasks.filter((task) => {
     return (
@@ -154,7 +153,7 @@ function filterSearch(tasks: Tasks[]): void {
       task.descName.toLowerCase().includes(val.toLowerCase())
     );
   });
-  console.log("ritika", filterTasks);
+  // console.log("ritika", filterTasks);
   createCards(filterTasks);
 }
 
@@ -192,7 +191,7 @@ function filterComplete(tasks: Tasks[]): void {
   const filterTasks = tasks.filter((task) => {
     return task.completed === val;
   });
-  console.log("Filtered Tasks", filterTasks);
+  // console.log("Filtered Tasks", filterTasks);
   createCards(filterTasks);
 }
 

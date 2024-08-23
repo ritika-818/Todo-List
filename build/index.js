@@ -22,7 +22,6 @@ var searchVal = document.getElementsByClassName("search")[0];
 var priorityValRight = document.getElementsByClassName("priority-right")[0];
 var iscompleted = document.getElementsByClassName("filter-inp")[0];
 var rightCategory = document.getElementsByClassName("category-right")[0];
-console.log("hello ritika");
 var tasks = loadTasks();
 var categoryArr = [];
 var categoryRightArr = [];
@@ -49,7 +48,7 @@ function generateArray(tasks) {
     var category = categoryArr;
     var dateValue = dateVal.value;
     tasks.push(__assign(__assign({}, tasks), { titleName: titleName, descName: descName, priorityName: priorityName, completed: completed, category: category, date: dateValue }));
-    console.log(tasks);
+    // console.log(tasks);
     saveTasks(tasks);
     createCards(tasks);
 }
@@ -114,14 +113,13 @@ priorityValRight.addEventListener("change", function () { return filterPriority(
 iscompleted.addEventListener("change", function () { return filterComplete(tasks); });
 function filterSearch(tasks) {
     var val = searchVal.value.trim();
-    // const taskComplete = iscompleted.value === "complete";
     if (val === "")
         createCards(tasks);
     var filterTasks = tasks.filter(function (task) {
         return (task.titleName.toLowerCase().includes(val.toLowerCase()) ||
             task.descName.toLowerCase().includes(val.toLowerCase()));
     });
-    console.log("ritika", filterTasks);
+    // console.log("ritika", filterTasks);
     createCards(filterTasks);
 }
 function filterPriority(tasks) {
@@ -158,7 +156,7 @@ function filterComplete(tasks) {
     var filterTasks = tasks.filter(function (task) {
         return task.completed === val;
     });
-    console.log("Filtered Tasks", filterTasks);
+    // console.log("Filtered Tasks", filterTasks);
     createCards(filterTasks);
 }
 function createCards(tasks) {
