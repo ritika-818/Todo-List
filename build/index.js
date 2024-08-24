@@ -48,7 +48,6 @@ function generateArray(tasks) {
     var category = categoryArr;
     var dateValue = dateVal.value;
     tasks.push(__assign(__assign({}, tasks), { titleName: titleName, descName: descName, priorityName: priorityName, completed: completed, category: category, date: dateValue }));
-    // console.log(tasks);
     saveTasks(tasks);
     createCards(tasks);
 }
@@ -108,27 +107,31 @@ category.addEventListener("change", function () {
     });
     category.value = "";
 });
-searchVal.addEventListener("input", function () { return filterSearch(tasks); });
-priorityValRight.addEventListener("change", function () { return filterPriority(tasks); });
-iscompleted.addEventListener("change", function () { return filterComplete(tasks); });
-function filterSearch(tasks) {
-    var val = searchVal.value.trim();
-    if (val === "")
-        createCards(tasks);
-    var filterTasks = tasks.filter(function (task) {
-        return (task.titleName.toLowerCase().includes(val.toLowerCase()) ||
-            task.descName.toLowerCase().includes(val.toLowerCase()));
-    });
-    // console.log("ritika", filterTasks);
-    createCards(filterTasks);
-}
-function filterPriority(tasks) {
-    var order = priorityValRight.value;
-    var filterarr = sortPriority(tasks, order);
-    if (order === "")
-        createCards(tasks);
-    else
-        createCards(filterarr);
+searchVal.addEventListener("input", function () { return applyFilters(tasks); });
+priorityValRight.addEventListener("change", function () { return applyFilters(tasks); });
+iscompleted.addEventListener("change", function () { return applyFilters(tasks); });
+function applyFilters(tasks) {
+    var filteredTasks = tasks;
+    if (categoryRightArr.length > 0) {
+        filteredTasks = filteredTasks.filter(function (task) {
+            return task.category.some(function (item) { return categoryRightArr.includes(item); });
+        });
+    }
+    if (priorityValRight.value !== "") {
+        filteredTasks = sortPriority(filteredTasks, priorityValRight.value);
+    }
+    if (iscompleted.value !== "all") {
+        var val_1 = iscompleted.value === "complete";
+        filteredTasks = filteredTasks.filter(function (task) { return task.completed === val_1; });
+    }
+    var searchValTrimmed = searchVal.value.trim();
+    if (searchValTrimmed !== "") {
+        filteredTasks = filteredTasks.filter(function (task) {
+            return (task.titleName.toLowerCase().includes(searchValTrimmed.toLowerCase()) ||
+                task.descName.toLowerCase().includes(searchValTrimmed.toLowerCase()));
+        });
+    }
+    createCards(filteredTasks);
 }
 function sortPriority(tasks, order) {
     var priorityMap = {
@@ -146,18 +149,6 @@ function sortPriority(tasks, order) {
             return p2 - p1;
         }
     });
-}
-function filterComplete(tasks) {
-    if (iscompleted.value === "all") {
-        createCards(tasks);
-        return;
-    }
-    var val = iscompleted.value === "complete";
-    var filterTasks = tasks.filter(function (task) {
-        return task.completed === val;
-    });
-    // console.log("Filtered Tasks", filterTasks);
-    createCards(filterTasks);
 }
 function createCards(tasks) {
     cardContainer.innerHTML = "";
